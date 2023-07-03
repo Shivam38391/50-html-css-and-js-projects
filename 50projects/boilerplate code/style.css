@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* default setting  */
+* {
+    /* not using traditional box model */
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    /* using flex-box : most ofthe project 
+     in the midle of view port*/
+    display: flex;
+    flex-direction: column;
+    /* align iten to horizontally
+     because flex diretion is column */
+    align-items: center;
+    /* jusity content align text vrtically (because of flex direction) , by default it is horizenrtal , it only works when height of the body is definded */
+    justify-content: center;
+
+    /* 100vh means take up the entire viewport height */
+    height: 100vh;
+
+    /* dont want to show scroll bar */
+    overflow: hidden;
+
+}

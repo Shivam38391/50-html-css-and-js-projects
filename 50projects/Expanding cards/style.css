@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* default setting  */
+* {
+    /* not using traditional box model */
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    /* using flex-box : most ofthe project 
+     in the midle of view port*/
+    display: flex;
+    /* align iten to horizontally
+     because flex diretion is column */
+    align-items: center;
+    /* jusity content align text vrtically (because of flex direction) , by default it is horizenrtal , it only works when height of the body is definded */
+    justify-content: center;
+
+    /* 100vh means take up the entire viewport height */
+    height: 100vh;
+
+    /* dont want to show scroll bar */
+    overflow: hidden;
+
+}
+
+
+.container{
+    display: flex;
+    width: 90vw;
+    justify-content: space-between;
+}
+
+.panel {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 40px;
+    color: antiquewhite;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+
+    /* because we want the h3 to absolute  */
+    position: relative;
+    transition:  flex 0.7s ease-in;
+}
+
+.panel h3 {
+
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    opacity: 0;
+
+}
+
+.panel.active {
+    flex: 5;
+
+}
+
+.panel.active h3 {
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out 0.4s;
+}
+
+
+
+@media(max-width: 480px){
+    /* any style we put here only going to effect if the screen is under 480px */
+    .container {
+        /* on big screen it was 90 but on small we set it to 100 */
+        width: 100vw;
+    }
+
+    .panel:nth-of-type(4), .panel:nth-of-type(5){
+        /* this will remove 4 and 5 card when the screen size is under 480px */
+        display: none;
+    }
+}
